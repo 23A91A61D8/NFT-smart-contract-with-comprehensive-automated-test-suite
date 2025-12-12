@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Documentation: NFT Contract
 
 This documentation provides the complete setup, configuration, and architectural reasoning behind the NFT smart contract project. It includes instructions for Docker-based compilation/testing and key insights into design, security, and scalability.
@@ -59,3 +60,6 @@ The primary security risks were mitigated by:
 
 ### Scalability for Significant Usage
 The main bottleneck for future scaling is the centralized **onlyOwner access control**. To handle significantly increased usage, the contract would need to migrate from Ownable to a decentralized *multisig wallet* or a *DAO governance model* (like OpenZeppelin's AccessControl) to distribute administrative power and prevent a single point of failure.
+=======
+# NFT-smart-contract-with-comprehensive-automated-test-suite
+>>>>>>> c172e2c959e4ef0f1d1f7404c718bf69e83ebffc
