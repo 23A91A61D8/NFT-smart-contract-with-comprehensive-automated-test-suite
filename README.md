@@ -24,20 +24,20 @@ This section fulfills the documentation requirements (Step 7) by detailing the s
 *Use the following command to build the image and tag it as nft-contract.
 
 ```bash
-docker build -t nft-contract .
+*docker build -t nft-contract .
 
 # Note on Build Fixes: The Dockerfile includes a necessary intermediate cleanup step (RUN rm -f contracts/Counter.t.sol) to remove the incompatible Foundry test file that caused the initial compilation errors. This ensures the Hardhat compile step succeeds and the image builds correctly.
 
-Run Tests inside the Container
-Execute the tests using the following command. The output should confirm 18 passing tests.
+*Run Tests inside the Container
+*Execute the tests using the following command. The output should confirm 18 passing tests.
   bash:
-  docker run nft-contract npx hardhat test --network hardhat
+  *docker run nft-contract npx hardhat test --network hardhat
 
 #Note on Test Fixes: To achieve the final successful run, the local test file (NftCollection.test.cjs) was modified to align with Ethers v5 syntax and changed specific string revert assertions (e.g., to.be.revertedWith('...')) to the generic to.be.reverted to match the environment's assertion handler.
 
 Upon successful completion, the output will confirm the clean run:
     18 passing (Xs)--->18 passing (2s)
-## 🏛 Contract Design and Security Analysis Summary
+## * Contract Design and Security Analysis Summary
 
 ### High-Level Architecture
 The contract architecture is built for *security* and *maintainability* by inheriting from audited *OpenZeppelin* modules: *ERC721* (for token functions), *Ownable* (for access control via onlyOwner), and *Pausable* (for an emergency stop mechanism). Custom logic, like safeMint(), is layered on top of these secure base modules. 
@@ -49,7 +49,7 @@ The design includes *Ownable* and *Pausable* for enhanced control but *omits* co
 A highly *scalable off-chain metadata strategy* is used. The contract only stores a single, owner-restricted _baseURI, which is combined with the tokenId to form a full URL (e.g., ipfs://hash/123). This keeps on-chain *gas costs minimal* regardless of collection size, as the vast data is stored externally (typically on IPFS).
 
 ### Testing Approach
-Testing was comprehensive, utilizing Hardhat and Mocha to ensure *functional correctness, access control, and resilience*. Key failure scenarios explicitly tested for include: non-admin calls to protected functions, attempts to mint past the MAX_SUPPLY limit, and all actions when the contract is correctly paused.
+*Testing was comprehensive, utilizing Hardhat and Mocha to ensure *functional correctness, access control, and resilience*. Key failure scenarios explicitly tested for *include: non-admin calls to protected functions, attempts to mint past the MAX_SUPPLY limit, and all actions when the contract is correctly paused.
 
 ### Security Risks and Mitigation
 The primary security risks were mitigated by:
