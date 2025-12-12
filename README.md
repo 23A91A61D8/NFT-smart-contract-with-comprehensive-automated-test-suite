@@ -58,7 +58,7 @@ The primary security risks were mitigated by:
 * *Re-entrancy Attacks:* Relying on the audited *OpenZeppelin ERC721* which follows the Checks-Effects-Interactions pattern.
 
 ### Scalability for Significant Usage
-The main bottleneck for future scaling is the centralized **onlyOwner access control**. To handle significantly increased usage, the contract would need to migrate from Ownable to a decentralized *multisig wallet* or a *DAO governance model* (like OpenZeppelin's AccessControl) to distribute administrative power and prevent a single point of failure.
+*The main bottleneck for future scaling is the centralized **onlyOwner access control**. To handle significantly increased usage, the contract would need to migrate from *Ownable to a decentralized *multisig wallet* or a *DAO governance model* (like OpenZeppelin's AccessControl) to distribute administrative power and prevent a single point of failure.
 =======
 # NFT-smart-contract-with-comprehensive-automated-test-suite
 >>>>>>> c172e2c959e4ef0f1d1f7404c718bf69e83ebffc
