@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Project Documentation: NFT Contract
 
 This documentation provides the complete setup, configuration, and architectural reasoning behind the NFT smart contract project. It includes instructions for Docker-based compilation/testing and key insights into design, security, and scalability.
@@ -21,8 +21,7 @@ This section fulfills the documentation requirements (Step 7) by detailing the s
 ### *2. Running the Tests*
 
 #### Build the Docker Image
-
-Use the following command to build the image and tag it as nft-contract.
+*Use the following command to build the image and tag it as nft-contract.
 
 ```bash
 docker build -t nft-contract .
